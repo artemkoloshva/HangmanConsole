@@ -11,7 +11,7 @@ public class Menu {
         }
     }
 
-    public String getTitle(){
+    public String getText(){
         return _text;
     }
 

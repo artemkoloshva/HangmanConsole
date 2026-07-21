@@ -7,7 +7,7 @@ public class MenuItem {
         _action = action;
     }
 
-    public String getTitle() {
+    public String getText() {
         return _text;
     }
 
