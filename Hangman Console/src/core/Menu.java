@@ -28,7 +28,14 @@ public class Menu {
             _printer.println(item.getText());
         }
 
-        int selectedItem = _input.getInput("Выберите пункт меню: ", InputType.Number);
-        _items.get(selectedItem - 1).choose();
+        int index;
+        do {
+            index = _input.getInput("Выберите пункт меню: ", InputType.Number);
+            if (index < 1 || index > _items.size()) {
+                _printer.print("Ошибка. Пункт меню не найден. ");
+            }
+        } while (index < 1 || index > _items.size());
+
+        _items.get(index - 1).choose();
     }
 }
