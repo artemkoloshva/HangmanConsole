@@ -1,4 +1,7 @@
+package core;
+
 import java.util.*;
+import model.MenuItem;
 
 public class Menu {
     private final String _text;

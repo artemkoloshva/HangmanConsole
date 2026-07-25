@@ -1,3 +1,5 @@
+package model;
+
 public class MenuItem {
     private final String _text;
     private final Runnable _action;

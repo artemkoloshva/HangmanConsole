@@ -1,4 +1,7 @@
+package io;
+
 import java.util.*;
+import model.InputType;
 
 public class InputHandler{
     private final Scanner _scanner;

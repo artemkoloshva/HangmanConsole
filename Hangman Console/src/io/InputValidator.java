@@ -1,3 +1,7 @@
+package io;
+
+import model.InputType;
+
 public class InputValidator {
     public InputValidator() {}
 
@@ -7,8 +11,8 @@ public class InputValidator {
         }
 
         return switch (type) {
-            case Number -> isNumber(value);
-            case Letter -> isLetter(value);
+            case InputType.Number -> isNumber(value);
+            case InputType.Letter -> isLetter(value);
         };
     }
 

@@ -1,3 +1,7 @@
+package io;
+
+import model.InputType;
+
 public class InputParser {
     public InputParser() {}
 
@@ -8,8 +12,8 @@ public class InputParser {
         }
 
         return switch (type) {
-            case Number -> (T) parseInteger(value);
-            case Letter -> (T) parseCharacter(value);
+            case InputType.Number -> (T) parseInteger(value);
+            case InputType.Letter -> (T) parseCharacter(value);
             default -> throw new IllegalArgumentException("Неподдерживаемый тип: " + type);
         };
     }
