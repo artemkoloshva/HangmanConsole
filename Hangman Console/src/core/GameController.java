@@ -92,5 +92,7 @@ public class GameController {
         }
 
         _printer.println("Правильное слово было: " + fullWord);
+
+
     }
 }
