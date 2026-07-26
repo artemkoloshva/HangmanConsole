@@ -29,4 +29,17 @@ public class InputHandler{
             }
         }
     }
+
+    public <T> T getInput(InputType type){
+        while (true){
+            String value = _scanner.next();
+
+            if(_validator.isValid(value, type)){
+                return _parser.parse(value, type);
+            }
+            else {
+                _printer.print("Ошибка ввода. Попробуйте еще раз.");
+            }
+        }
+    }
 }

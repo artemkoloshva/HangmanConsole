@@ -7,14 +7,14 @@ import io.Printer;
 import model.InputType;
 import model.MenuItem;
 
-public class Menu {
+public class MenuController {
     private final String _text;
     private final List<MenuItem> _items;
     private final Printer _printer;
     private final InputHandler _input;
 
 
-    public Menu(String text, MenuItem... items){
+    public MenuController(String text, MenuItem... items){
         _text = text;
         _items = new ArrayList<>();
         _printer = new Printer();
@@ -22,7 +22,7 @@ public class Menu {
         Collections.addAll(_items, items);
     }
 
-    public void start(){
+    public void open(){
         _printer.println(_text);
         for(MenuItem item : _items){
             _printer.println(item.getText());

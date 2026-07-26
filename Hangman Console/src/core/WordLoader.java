@@ -11,6 +11,11 @@ public class WordLoader {
         _words = new ArrayList<>();
     }
 
+    public WordLoader(String filePath) {
+        _words = new ArrayList<>();
+        load(filePath);
+    }
+
     public String getWord(int index){
         return _words.get(index);
     }
