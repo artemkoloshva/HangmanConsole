@@ -15,7 +15,7 @@ public class GameController {
     public GameController(){
         _printer = new Printer();
         _input = new InputHandler();
-        _wordLoader = new WordLoader("C:\\Users\\kArtem\\IdeaProjects\\Hangman Console\\src\\resources\\words.txt");
+        _wordLoader = new WordLoader("src\\resources\\words.txt");
         _round = new Round();
         _random = new Random();
     }
@@ -92,7 +92,6 @@ public class GameController {
         }
 
         _printer.println("Правильное слово было: " + fullWord);
-
-
+        _printer.println("");
     }
 }
