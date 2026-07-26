@@ -21,6 +21,9 @@ public class InputValidator {
     }
 
     private boolean isLetter(String value) {
-        return value.length() == 1 && Character.isLetter(value.charAt(0));
+        if (value == null || value.length() != 1) {
+            return false;
+        }
+        return Character.UnicodeBlock.of(value.charAt(0)) == Character.UnicodeBlock.CYRILLIC;
     }
 }
