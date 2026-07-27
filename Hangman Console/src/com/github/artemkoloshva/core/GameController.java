@@ -6,6 +6,8 @@ import java.util.Random;
 import java.util.stream.Collectors;
 
 public class GameController {
+    private final String PATH_TO_DICTIONARY = "src\\com\\github\\artemkoloshva\\resources\\words.txt";
+
     private final Printer printer;
     private final InputHandler input;
     private final WordLoader wordLoader;
@@ -15,7 +17,7 @@ public class GameController {
     public GameController(){
         printer = new Printer();
         input = new InputHandler();
-        wordLoader = new WordLoader("src\\com\\github\\artemkoloshva\\resources\\words.txt");
+        wordLoader = new WordLoader(PATH_TO_DICTIONARY);
         round = new Round();
         random = new Random();
     }
