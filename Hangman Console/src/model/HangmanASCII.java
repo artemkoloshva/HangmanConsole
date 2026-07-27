@@ -66,13 +66,13 @@ public enum HangmanASCII {
               |    / \\
             __|________""");
 
-    private final String _art;
+    private final String art;
 
     HangmanASCII(String art) {
-        this._art = art;
+        this.art = art;
     }
 
     public String getArt() {
-        return _art;
+        return art;
     }
 }

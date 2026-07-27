@@ -8,34 +8,34 @@ import model.InputType;
 import model.MenuItem;
 
 public class MenuController {
-    private final String _text;
-    private final List<MenuItem> _items;
-    private final Printer _printer;
-    private final InputHandler _input;
+    private final String text;
+    private final List<MenuItem> items;
+    private final Printer printer;
+    private final InputHandler input;
 
 
-    public MenuController(String text, MenuItem... items){
-        _text = text;
-        _items = new ArrayList<>();
-        _printer = new Printer();
-        _input = new InputHandler();
-        Collections.addAll(_items, items);
+    public MenuController(String newText, MenuItem... item){
+        text = newText;
+        this.items = new ArrayList<>();
+        printer = new Printer();
+        input = new InputHandler();
+        Collections.addAll(this.items, item);
     }
 
     public void open(){
-        _printer.println(_text);
-        for(MenuItem item : _items){
-            _printer.println(item.getText());
+        printer.println(text);
+        for(MenuItem item : items){
+            printer.println(item.getText());
         }
 
         int index;
         do {
-            index = _input.getInput("Выберите пункт меню: ", InputType.Number);
-            if (index < 1 || index > _items.size()) {
-                _printer.print("Ошибка. Пункт меню не найден. ");
+            index = input.getInput("Выберите пункт меню: ", InputType.Number);
+            if (index < 1 || index > items.size()) {
+                printer.print("Ошибка. Пункт меню не найден. ");
             }
-        } while (index < 1 || index > _items.size());
+        } while (index < 1 || index > items.size());
 
-        _items.get(index - 1).choose();
+        items.get(index - 1).choose();
     }
 }

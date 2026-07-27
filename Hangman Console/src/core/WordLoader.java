@@ -5,23 +5,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WordLoader {
-    private final List<String> _words;
+    private final List<String> words;
 
     public WordLoader() {
-        _words = new ArrayList<>();
+        words = new ArrayList<>();
     }
 
     public WordLoader(String filePath) {
-        _words = new ArrayList<>();
+        words = new ArrayList<>();
         load(filePath);
     }
 
     public String getWord(int index){
-        return _words.get(index);
+        return words.get(index);
     }
 
     public int getWordsLength(){
-        return _words.size();
+        return words.size();
     }
 
     public void load(String filePath){
@@ -29,7 +29,7 @@ public class WordLoader {
             String line;
             while ((line = reader.readLine()) != null) {
                 if (!line.trim().isEmpty()) {
-                    _words.add(line.trim());
+                    words.add(line.trim());
                 }
             }
         } catch (IOException e) {

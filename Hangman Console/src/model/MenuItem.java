@@ -1,21 +1,21 @@
 package model;
 
 public class MenuItem {
-    private final String _text;
-    private final Runnable _action;
+    private final String text;
+    private final Runnable action;
 
-    public MenuItem(String text, Runnable action){
-        _text = text;
-        _action = action;
+    public MenuItem(String newText, Runnable newAction){
+        text = newText;
+        action = newAction;
     }
 
     public String getText() {
-        return _text;
+        return text;
     }
 
     public void choose(){
-        if (_action != null) {
-            _action.run();
+        if (action != null) {
+            action.run();
         }
     }
 }
