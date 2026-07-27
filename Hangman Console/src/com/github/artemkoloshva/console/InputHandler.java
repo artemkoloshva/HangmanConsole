@@ -1,7 +1,7 @@
-package io;
+package com.github.artemkoloshva.console;
 
 import java.util.*;
-import model.InputType;
+import com.github.artemkoloshva.model.InputType;
 
 public class InputHandler{
     private final Scanner scanner;

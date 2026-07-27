@@ -1,4 +1,4 @@
-package model;
+package com.github.artemkoloshva.model;
 
 public class MenuItem {
     private final String text;

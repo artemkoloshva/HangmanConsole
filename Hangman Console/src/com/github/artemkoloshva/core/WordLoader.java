@@ -1,4 +1,4 @@
-package core;
+package com.github.artemkoloshva.core;
 
 import java.io.*;
 import java.util.ArrayList;

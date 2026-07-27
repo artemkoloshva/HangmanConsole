@@ -1,7 +1,7 @@
-package core;
+package com.github.artemkoloshva.core;
 
-import io.*;
-import model.*;
+import com.github.artemkoloshva.console.*;
+import com.github.artemkoloshva.model.*;
 import java.util.Random;
 import java.util.stream.Collectors;
 

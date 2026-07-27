@@ -1,4 +1,4 @@
-package model;
+package com.github.artemkoloshva.model;
 
 public enum HangmanASCII {
     Stage0("""

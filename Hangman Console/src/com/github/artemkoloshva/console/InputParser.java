@@ -1,6 +1,6 @@
-package io;
+package com.github.artemkoloshva.console;
 
-import model.InputType;
+import com.github.artemkoloshva.model.InputType;
 
 public class InputParser {
     public InputParser() {}

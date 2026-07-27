@@ -1,6 +1,6 @@
-package io;
+package com.github.artemkoloshva.console;
 
-import model.HangmanASCII;
+import com.github.artemkoloshva.model.HangmanASCII;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;

@@ -1,11 +1,11 @@
-package core;
+package com.github.artemkoloshva.core;
 
 import java.util.*;
 
-import io.InputHandler;
-import io.Printer;
-import model.InputType;
-import model.MenuItem;
+import com.github.artemkoloshva.console.InputHandler;
+import com.github.artemkoloshva.console.Printer;
+import com.github.artemkoloshva.model.InputType;
+import com.github.artemkoloshva.model.MenuItem;
 
 public class MenuController {
     private final String text;

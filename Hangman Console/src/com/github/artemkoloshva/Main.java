@@ -1,6 +1,6 @@
-import core.GameController;
-import core.MenuController;
-import model.MenuItem;
+import com.github.artemkoloshva.core.GameController;
+import com.github.artemkoloshva.core.MenuController;
+import com.github.artemkoloshva.model.MenuItem;
 
 void main() {
     MenuController menu = new MenuController("Добро пожаловать в консольную игру \"Виселица\"!",
