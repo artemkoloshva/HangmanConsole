@@ -15,7 +15,7 @@ public class GameController {
     public GameController(){
         printer = new Printer();
         input = new InputHandler();
-        wordLoader = new WordLoader("src\\resources\\words.txt");
+        wordLoader = new WordLoader("src\\com\\github\\artemkoloshva\\resources\\words.txt");
         round = new Round();
         random = new Random();
     }
