@@ -45,12 +45,12 @@ public class Printer {
     }
 
     public void printErrorLetters(int errorsCount, Set<Character> errorLetters) {
-        String lettersStr = "";
+        String lettersString = "";
         if (!errorLetters.isEmpty()) {
-            lettersStr = errorLetters.stream()
+            lettersString = errorLetters.stream()
                     .map(String::valueOf)
                     .collect(Collectors.joining(" "));
         }
-        System.out.println("Ошибки (" + errorsCount + "): " + lettersStr);
+        System.out.println("Ошибки (" + errorsCount + "): " + lettersString);
     }
 }
