@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 
 public class GameController {
     private final String PATH_TO_DICTIONARY = "src\\com\\github\\artemkoloshva\\resources\\words.txt";
+    private final int ERRORS_TO_LOSE = 6;
 
     private final Printer printer;
     private final InputHandler input;
@@ -33,7 +34,7 @@ public class GameController {
 
     public void start(){
         newRound();
-        while (!round.isWin() && round.getErrors() < 6){
+        while (!round.isWin() && round.getErrors() < ERRORS_TO_LOSE){
             displayGameState();
             processPlayerInput();
         }
