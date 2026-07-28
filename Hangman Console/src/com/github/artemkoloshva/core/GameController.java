@@ -15,7 +15,7 @@ public class GameController {
     private final Round round;
     private final Random random;
 
-    public GameController(){
+    public GameController() {
         printer = new Printer();
         input = new InputHandler();
         wordLoader = new WordLoader(PATH_TO_DICTIONARY);
@@ -23,66 +23,70 @@ public class GameController {
         random = new Random();
     }
 
-    public void newRound(){
+    public void newRound() {
         round.clear();
         round.setWord(getRandomWord());
     }
 
-    public String getRandomWord(){
+    public String getRandomWord() {
         return wordLoader.getWord(random.nextInt(wordLoader.getWordsLength()));
     }
 
-    public void start(){
+    public void start() {
         newRound();
+
         while (!round.isWin() && round.getErrors() < ERRORS_TO_LOSE){
             displayGameState();
             processPlayerInput();
         }
+
         endGame();
     }
 
-    private void displayGameState(){
+    private void displayGameState() {
         printer.printHangmanArt(round.getErrors());
         printer.printDisplayWord(round.getWordLetters(), round.getUsedLetters());
         printer.printErrorLetters(round.getErrors(), round.getErrorLetters());
     }
 
-    private void processPlayerInput(){
+    private void processPlayerInput() {
         char letter = input.getInput("Введите букву: ", InputType.Letter);
+
         letter = Character.toLowerCase(letter);
 
-        if (!round.isUsedLetter(letter)){
+        if (!round.isUsedLetter(letter)) {
             round.addUsedLetter(letter);
 
-            if (round.hasLetter(letter)){
+            if (round.hasLetter(letter)) {
                 printer.println("Правильно! Буква '" + letter + "' есть в слове.");
                 checkWin();
             }
-            else{
+            else {
                 round.addError(letter);
                 printer.println("Неправильно! Буквы '" + letter + "' нет в слове.");
             }
         }
-        else{
+        else {
             printer.println("Вы уже вводили эту букву. Попробуйте другую.");
         }
     }
 
-    private void checkWin(){
+    private void checkWin() {
         boolean allLettersGuessed = round.getWordLetters().stream()
                 .allMatch(letter -> round.isUsedLetter(letter));
-        if (allLettersGuessed){
+
+        if (allLettersGuessed) {
             round.setWin(true);
         }
     }
 
-    private void endGame(){
+    private void endGame() {
         printer.printHangmanArt(round.getErrors());
 
-        if (round.isWin()){
+        if (round.isWin()) {
             printer.println("Поздравляем! Вы угадали слово!");
         }
-        else{
+        else {
             printer.println("Игра окончена. Вы проиграли.");
         }
 

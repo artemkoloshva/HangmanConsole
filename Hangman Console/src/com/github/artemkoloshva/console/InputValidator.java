@@ -24,6 +24,7 @@ public class InputValidator {
         if (value == null || value.length() != 1) {
             return false;
         }
+
         return Character.UnicodeBlock.of(value.charAt(0)) == Character.UnicodeBlock.CYRILLIC;
     }
 }

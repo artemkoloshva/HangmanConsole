@@ -7,7 +7,7 @@ void main() {
             new MenuItem("1. Новая игра", () -> new GameController().start()),
             new MenuItem("2. Выход из игры", () -> System.exit(0)));
 
-    while (true){
+    while (true) {
         menu.open();
     }
 }

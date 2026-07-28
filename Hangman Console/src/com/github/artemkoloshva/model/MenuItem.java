@@ -4,7 +4,7 @@ public class MenuItem {
     private final String text;
     private final Runnable action;
 
-    public MenuItem(String newText, Runnable newAction){
+    public MenuItem(String newText, Runnable newAction) {
         text = newText;
         action = newAction;
     }
@@ -13,7 +13,7 @@ public class MenuItem {
         return text;
     }
 
-    public void choose(){
+    public void choose() {
         if (action != null) {
             action.run();
         }

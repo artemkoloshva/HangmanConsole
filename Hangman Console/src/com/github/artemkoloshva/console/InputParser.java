@@ -22,6 +22,7 @@ public class InputParser {
         if (!value.matches("-?\\d+")) {
             throw new IllegalArgumentException("Некорректное число: " + value);
         }
+
         try {
             return Integer.parseInt(value);
         } catch (NumberFormatException e) {
@@ -33,6 +34,7 @@ public class InputParser {
         if (value.length() != 1 || !Character.isLetter(value.charAt(0))) {
             throw new IllegalArgumentException("Некорректный символ: " + value);
         }
+
         return value.charAt(0);
     }
 }

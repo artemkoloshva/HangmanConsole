@@ -13,24 +13,26 @@ public class MenuController {
     private final Printer printer;
     private final InputHandler input;
 
-
-    public MenuController(String newText, MenuItem... item){
+    public MenuController(String newText, MenuItem... item) {
         text = newText;
-        this.items = new ArrayList<>();
+        items = new ArrayList<>();
         printer = new Printer();
         input = new InputHandler();
-        Collections.addAll(this.items, item);
+        Collections.addAll(items, item);
     }
 
-    public void open(){
+    public void open() {
         printer.println(text);
-        for(MenuItem item : items){
+
+        for (MenuItem item : items) {
             printer.println(item.getText());
         }
 
         int index;
+
         do {
             index = input.getInput("Выберите пункт меню: ", InputType.Number);
+
             if (index < 1 || index > items.size()) {
                 printer.print("Ошибка. Пункт меню не найден. ");
             }

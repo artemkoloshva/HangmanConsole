@@ -6,13 +6,13 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 public class Printer {
-    public Printer(){}
+    public Printer() {}
 
-    public void println(String text){
+    public void println(String text) {
         System.out.println(text);
     }
 
-    public void print(String text){
+    public void print(String text) {
         System.out.print(text);
     }
 
@@ -26,11 +26,13 @@ public class Printer {
             case 5 -> HangmanASCII.Stage5.getArt();
             default -> HangmanASCII.Stage6.getArt();
         };
+
         System.out.println(art);
     }
 
     public void printDisplayWord(List<Character> wordLetters, Set<Character> usedLetters) {
         StringBuilder result = new StringBuilder();
+
         for (int i = 0; i < wordLetters.size(); i++) {
             Character letter = wordLetters.get(i);
 
@@ -41,16 +43,19 @@ public class Printer {
                 result.append("_ ");
             }
         }
+
         System.out.println("Слово: " + result.toString().trim());
     }
 
     public void printErrorLetters(int errorsCount, Set<Character> errorLetters) {
         String lettersString = "";
+
         if (!errorLetters.isEmpty()) {
             lettersString = errorLetters.stream()
                     .map(String::valueOf)
                     .collect(Collectors.joining(" "));
         }
+
         System.out.println("Ошибки (" + errorsCount + "): " + lettersString);
     }
 }

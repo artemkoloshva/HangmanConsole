@@ -12,11 +12,11 @@ public class Round {
     private int errorsCount;
     private boolean isWin;
 
-    public Round(){
+    public Round() {
         clear();
     }
 
-    public void clear(){
+    public void clear() {
         word = new ArrayList<>();
         errorLetters = new HashSet<>(); // Инициализируем Set
         usedLetters = new HashSet<>();
@@ -24,63 +24,64 @@ public class Round {
         isWin = false;
     }
 
-    public void setWord(String word){
-        for(Character letter : word.toCharArray()){
+    public void setWord(String word) {
+        for (Character letter : word.toCharArray()) {
             this.word.add(letter);
         }
     }
 
-    public Character getWordLetter(int index){
+    public Character getWordLetter(int index) {
         return word.get(index);
     }
 
-    public List<Character> getWordLetters(){
+    public List<Character> getWordLetters() {
         return new ArrayList<>(word);
     }
 
-    public int getWordLength(){
+    public int getWordLength() {
         return word.size();
     }
 
-    public boolean hasLetter(Character letter){
-        for (Character let : word){
-            if(let.equals(letter)){
+    public boolean hasLetter(Character letter) {
+        for (Character let : word) {
+            if (let.equals(letter)) {
                 return true;
             }
         }
+
         return false;
     }
 
-    public void addUsedLetter(Character letter){
+    public void addUsedLetter(Character letter) {
         usedLetters.add(letter);
     }
 
-    public boolean isUsedLetter(Character letter){
+    public boolean isUsedLetter(Character letter) {
         return usedLetters.contains(letter);
     }
 
-    public Set<Character> getUsedLetters(){
+    public Set<Character> getUsedLetters() {
         return new HashSet<>(usedLetters);
     }
 
-    public Set<Character> getErrorLetters(){
+    public Set<Character> getErrorLetters() {
         return new HashSet<>(errorLetters);
     }
 
-    public int getErrors(){
+    public int getErrors() {
         return errorsCount;
     }
 
-    public void addError(Character letter){
+    public void addError(Character letter) {
         errorLetters.add(letter);
         errorsCount++;
     }
 
-    public boolean isWin(){
+    public boolean isWin() {
         return isWin;
     }
 
-    public void setWin(boolean win){
+    public void setWin(boolean win) {
         isWin = win;
     }
 }
