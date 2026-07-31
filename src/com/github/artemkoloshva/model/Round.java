@@ -7,7 +7,7 @@ import java.util.Set;
 
 public class Round {
     private List<Character> word;
-    private Set<Character> errorLetters; // Заменили List на Set
+    private Set<Character> errorLetters;
     private Set<Character> usedLetters;
     private int errorsCount;
     private boolean isWin;
@@ -18,7 +18,7 @@ public class Round {
 
     public void clear() {
         word = new ArrayList<>();
-        errorLetters = new HashSet<>(); // Инициализируем Set
+        errorLetters = new HashSet<>();
         usedLetters = new HashSet<>();
         errorsCount = 0;
         isWin = false;
