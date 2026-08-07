@@ -1,7 +1,6 @@
 # Hangman Console
 
 ![Java](https://img.shields.io/badge/Java-25-orange?logo=openjdk&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-blue)
 ![Status](https://img.shields.io/badge/Status-Complete-success)
 ![Dependencies](https://img.shields.io/badge/Dependencies-None-lightgrey)
 
