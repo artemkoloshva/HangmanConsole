@@ -58,12 +58,12 @@ public class GameController {
             round.addUsedLetter(letter);
 
             if (round.hasLetter(letter)) {
-                printer.println("Правильно! Буква '" + letter + "' есть в слове.");
+                printer.println("Правильно! Буква '%c' есть в слове.".formatted(letter));
                 checkWin();
             }
             else {
                 round.addError(letter);
-                printer.println("Неправильно! Буквы '" + letter + "' нет в слове.");
+                printer.println("Неправильно! Буквы '%c' нет в слове.".formatted(letter));
             }
         }
         else {
@@ -99,6 +99,6 @@ public class GameController {
         }
 
         printer.println("Правильное слово было: " + fullWord);
-        printer.println("");
+        printer.println();
     }
 }

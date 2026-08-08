@@ -12,6 +12,10 @@ public class Printer {
         System.out.println(text);
     }
 
+    public void println() {
+        System.out.println();
+    }
+
     public void print(String text) {
         System.out.print(text);
     }
@@ -56,6 +60,6 @@ public class Printer {
                     .collect(Collectors.joining(" "));
         }
 
-        System.out.println("Ошибки (" + errorsCount + "): " + lettersString);
+        System.out.printf("Ошибки (%d): %s  %n", errorsCount, lettersString);
     }
 }
