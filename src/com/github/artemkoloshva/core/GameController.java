@@ -23,7 +23,7 @@ public class GameController {
         random = new Random();
     }
 
-    public void newRound() {
+    public void makeRound() {
         round.clear();
         round.setWord(getRandomWord());
     }
@@ -33,7 +33,7 @@ public class GameController {
     }
 
     public void start() {
-        newRound();
+        makeRound();
 
         while (!round.isWin() && round.getErrors() < ERRORS_TO_LOSE){
             displayGameState();

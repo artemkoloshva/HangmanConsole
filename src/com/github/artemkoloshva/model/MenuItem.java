@@ -4,9 +4,9 @@ public class MenuItem {
     private final String text;
     private final Runnable action;
 
-    public MenuItem(String newText, Runnable newAction) {
-        text = newText;
-        action = newAction;
+    public MenuItem(String text, Runnable action) {
+        this.text = text;
+        this.action = action;
     }
 
     public String getText() {

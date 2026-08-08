@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Set;
 
 public class Round {
-    private List<Character> word;
+    private List<Character> letters;
     private Set<Character> errorLetters;
     private Set<Character> usedLetters;
     private int errorsCount;
@@ -17,7 +17,7 @@ public class Round {
     }
 
     public void clear() {
-        word = new ArrayList<>();
+        letters = new ArrayList<>();
         errorLetters = new HashSet<>();
         usedLetters = new HashSet<>();
         errorsCount = 0;
@@ -26,24 +26,24 @@ public class Round {
 
     public void setWord(String word) {
         for (Character letter : word.toCharArray()) {
-            this.word.add(letter);
+            this.letters.add(letter);
         }
     }
 
     public Character getWordLetter(int index) {
-        return word.get(index);
+        return letters.get(index);
     }
 
     public List<Character> getWordLetters() {
-        return new ArrayList<>(word);
+        return new ArrayList<>(letters);
     }
 
     public int getWordLength() {
-        return word.size();
+        return letters.size();
     }
 
     public boolean hasLetter(Character letter) {
-        for (Character let : word) {
+        for (Character let : letters) {
             if (let.equals(letter)) {
                 return true;
             }

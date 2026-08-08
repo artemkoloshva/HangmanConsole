@@ -1,7 +1,7 @@
 package com.github.artemkoloshva.model;
 
-public enum HangmanASCII {
-    Stage0("""
+public enum HangmanAscii {
+    STAGE_0("""
               _______
               |/    |
               |   \s
@@ -9,7 +9,7 @@ public enum HangmanASCII {
               |   \s
               |   \s
             __|________"""),
-    Stage1("""
+    STAGE_1("""
               _______
               |/    |
               |    ( )
@@ -17,7 +17,7 @@ public enum HangmanASCII {
               |   \s
               |   \s
             __|________"""),
-    Stage2("""
+    STAGE_2("""
               _______
               |/    |
               |    ( )
@@ -25,7 +25,7 @@ public enum HangmanASCII {
               |     |
               |   \s
             __|________"""),
-    Stage3("""
+    STAGE_3("""
               _______
               |/    |
               |    ( )
@@ -33,7 +33,7 @@ public enum HangmanASCII {
               |     |
               |   \s
             __|________"""),
-    Stage4("""
+    STAGE_4("""
               _______
               |/    |
               |    ( )
@@ -41,7 +41,7 @@ public enum HangmanASCII {
               |     |
               |   \s
             __|________"""),
-    Stage5("""
+    STAGE_5("""
               _______
               |/    |
               |    ( )
@@ -49,7 +49,7 @@ public enum HangmanASCII {
               |    /\s
               |   / \s
             __|________"""),
-    Stage6("""
+    STAGE_6("""
               _______
               |/    |
               |    ( )
@@ -57,7 +57,7 @@ public enum HangmanASCII {
               |    / \\
               |   /   \\
             __|________"""),
-    StageWin("""
+    STAGE_WIN("""
               _______
               |/    |
               |    ^_^
@@ -68,7 +68,7 @@ public enum HangmanASCII {
 
     private final String art;
 
-    HangmanASCII(String art) {
+    HangmanAscii(String art) {
         this.art = art;
     }
 
