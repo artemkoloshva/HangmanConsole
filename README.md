@@ -1,69 +1,75 @@
-# Виселица (Hangman Console)
+# Hangman Console
 
-Консольная реализация классической игры «Виселица» на Java. Игрок отгадывает
-случайное русское слово по буквам, ошибки отображаются в виде ASCII-рисунка
-виселицы.
+![Java](https://img.shields.io/badge/Java-25-orange?logo=openjdk&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Complete-success)
+![Dependencies](https://img.shields.io/badge/Dependencies-None-lightgrey)
 
-Проект сделан в рамках учебного трека [zhukovsd/java-backend-learning-course](https://zhukovsd.github.io/java-backend-learning-course/projects/hangman-console/)
-как разминочная задача на переход от теории к реализации цельного приложения.
+A console implementation of the classic "Hangman" game written in Java. The
+player guesses a random Russian word letter by letter, with mistakes
+displayed as an ASCII gallows drawing.
 
-## Особенности реализации
+This project was built as part of the
+[zhukovsd/java-backend-learning-course](https://zhukovsd.github.io/java-backend-learning-course/projects/hangman-console/)
+learning track, as a warm-up task for moving from theory to building a
+complete application.
 
-- **ООП-архитектура**: логика разделена на слои — консольный ввод/вывод,
-  игровая логика, модели данных.
-- **Валидация ввода**: принимаются только буквы кириллицы; некорректный
-  ввод не увеличивает счётчик ошибок.
-- **Повторный ввод буквы**, отсутствующей в слове, не засчитывается как
-  новая ошибка — буква просто попадает в список уже использованных.
-- Используются коллекции `List`/`Set` вместо массивов.
-- Путь к словарю указан как **относительный**, а не абсолютный.
-- Перезапуск игры реализован через цикл, без рекурсии.
-- ASCII-арт виселицы — 7 стадий (0–6 ошибок), хранятся как `enum`.
+## Implementation highlights
 
-## Стек
+- **OOP architecture**: logic is split into layers — console input/output,
+  game logic, and data models.
+- **Input validation**: only Cyrillic letters are accepted; invalid input
+  does not increase the error counter.
+- **Re-entering a letter** that isn't in the word doesn't count as a new
+  mistake — the letter is simply added to the list of already-used letters.
+- `List`/`Set` collections are used instead of arrays.
+- The path to the dictionary is **relative**, not absolute.
+- The game restart is implemented via a loop, without recursion.
+- The gallows ASCII art has 7 stages (0–6 mistakes), stored as an `enum`.
 
-- Java 25 (используются compact source files / instance main — `void main()`
-  в `Main.java` без объявления класса, [JEP 512](https://openjdk.org/jeps/512))
-- Стандартная библиотека (без внешних зависимостей)
-- Сборка — вручную / через IntelliJ IDEA (без Maven/Gradle)
+## Stack
 
-## Структура проекта
+- Java 25 (uses compact source files / instance main — a `void main()` in
+  `Main.java` with no enclosing class, [JEP 512](https://openjdk.org/jeps/512))
+- Standard library only (no external dependencies)
+- Built manually / via IntelliJ IDEA (no Maven/Gradle)
+
+## Project structure
 
 ```
 src/
 └── com/github/artemkoloshva/
-    ├── Main.java                 — точка входа, инициализация меню
-    ├── console/                  — слой ввода/вывода
-    │   ├── InputHandler.java     — цикл запроса ввода до получения валидного значения
-    │   ├── InputParser.java      — парсинг строки в Integer/Character
-    │   ├── InputValidator.java   — проверка корректности введённого значения
-    │   └── Printer.java          — вывод в консоль (слово, ошибки, ASCII-арт)
-    ├── core/                     — игровая логика
-    │   ├── GameController.java   — игровой цикл одного раунда
-    │   ├── MenuController.java   — отображение и обработка меню
-    │   └── WordLoader.java       — загрузка словаря из файла
-    ├── model/                    — модели данных
-    │   ├── HangmanASCII.java     — enum со стадиями рисунка виселицы
-    │   ├── InputType.java        — enum типов ожидаемого ввода (Number/Letter)
-    │   ├── MenuItem.java         — пункт меню (текст + действие)
-    │   └── Round.java            — состояние текущего раунда игры
+    ├── Main.java                 — entry point, menu initialization
+    ├── console/                  — input/output layer
+    │   ├── InputHandler.java     — loops the input prompt until a valid value is received
+    │   ├── InputParser.java      — parses a string into Integer/Character
+    │   ├── InputValidator.java   — validates the entered value
+    │   └── Printer.java          — console output (word, mistakes, ASCII art)
+    ├── core/                     — game logic
+    │   ├── GameController.java   — game loop for a single round
+    │   ├── MenuController.java   — menu display and handling
+    │   └── WordLoader.java       — loads the dictionary from a file
+    ├── model/                    — data models
+    │   ├── HangmanASCII.java     — enum with the gallows drawing stages
+    │   ├── InputType.java        — enum of expected input types (Number/Letter)
+    │   ├── MenuItem.java         — a menu item (text + action)
+    │   └── Round.java            — the current round's game state
     └── resources/
-        └── words.txt             — словарь (625 русских существительных)
+        └── words.txt             — dictionary (625 Russian nouns)
 ```
 
-## Требования
+## Requirements
 
-- **JDK 25** или новее (нужен для синтаксиса `void main()` без класса-обёртки
-  в `Main.java`). Более ранние версии Java этот файл не скомпилируют.
+- **JDK 25** or newer (required for the class-less `void main()` syntax in
+  `Main.java`). Earlier Java versions will not compile this file.
 
-## Как запустить
+## How to run
 
-### Через IntelliJ IDEA
-1. Открыть папку проекта как проект IntelliJ IDEA.
-2. Убедиться, что `src` помечена как **Sources Root**, а JDK проекта — 25+.
-3. Запустить `Main.java`.
+### Via IntelliJ IDEA
+1. Open the project folder as an IntelliJ IDEA project.
+2. Make sure `src` is marked as a **Sources Root** and the project JDK is 25+.
+3. Run `Main.java`.
 
-### Через терминал
+### Via terminal
 ```bash
 cd src
 javac -d ../out com/github/artemkoloshva/Main.java \
@@ -73,16 +79,16 @@ javac -d ../out com/github/artemkoloshva/Main.java \
 cd ..
 java -cp out Main
 ```
-> Важно: запускать нужно из корня проекта — путь к словарю в
-> `GameController` указан относительно рабочей директории
+> Important: run this from the project root — the path to the dictionary in
+> `GameController` is relative to the working directory
 > (`src\com\github\artemkoloshva\resources\words.txt`).
 
-## Как играть
+## How to play
 
-1. При старте выбрать пункт меню:
-   - `1` — начать новую игру
-   - `2` — выйти из приложения
-2. Вводить по одной букве кириллицы, пока слово не будет отгадано
-   полностью или не будет исчерпано 6 ошибок.
-3. После завершения раунда приложение показывает результат и правильное
-   слово, затем возвращается в главное меню.
+1. On startup, choose a menu option:
+   - `1` — start a new game
+   - `2` — exit the application
+2. Enter Cyrillic letters one at a time until the word is fully guessed or
+   6 mistakes have been made.
+3. After the round ends, the app shows the result and the correct word,
+   then returns to the main menu.
