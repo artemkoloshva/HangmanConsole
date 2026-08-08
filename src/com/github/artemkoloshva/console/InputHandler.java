@@ -16,7 +16,7 @@ public class InputHandler {
         printer = new Printer();
     }
 
-    public <T> T getInput(String text, InputType type) {
+    public <T> T input(String text, InputType type) {
         while (true) {
             printer.println(text);
 
@@ -31,7 +31,7 @@ public class InputHandler {
         }
     }
 
-    public <T> T getInput(InputType type) {
+    public <T> T input(InputType type) {
         while (true){
             String value = scanner.next();
 

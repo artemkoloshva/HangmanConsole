@@ -11,8 +11,8 @@ public class InputValidator {
         }
 
         return switch (type) {
-            case InputType.Number -> isNumber(value);
-            case InputType.Letter -> isLetter(value);
+            case InputType.NUMBER -> isNumber(value);
+            case InputType.LETTER -> isLetter(value);
         };
     }
 

@@ -13,12 +13,12 @@ public class MenuController {
     private final Printer printer;
     private final InputHandler input;
 
-    public MenuController(String newText, MenuItem... item) {
-        text = newText;
-        items = new ArrayList<>();
+    public MenuController(String text, MenuItem... items) {
+        this.text = text;
+        this.items = new ArrayList<>();
         printer = new Printer();
         input = new InputHandler();
-        Collections.addAll(items, item);
+        Collections.addAll(this.items, items);
     }
 
     public void open() {
@@ -31,7 +31,7 @@ public class MenuController {
         int index;
 
         do {
-            index = input.getInput("Выберите пункт меню: ", InputType.Number);
+            index = input.input("Выберите пункт меню: ", InputType.NUMBER);
 
             if (index < 1 || index > items.size()) {
                 printer.print("Ошибка. Пункт меню не найден. ");

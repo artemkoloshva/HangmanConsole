@@ -12,8 +12,8 @@ public class InputParser {
         }
 
         return switch (type) {
-            case InputType.Number -> (T) parseInteger(value);
-            case InputType.Letter -> (T) parseCharacter(value);
+            case InputType.NUMBER -> (T) parseInteger(value);
+            case InputType.LETTER -> (T) parseCharacter(value);
             default -> throw new IllegalArgumentException("Неподдерживаемый тип: " + type);
         };
     }

@@ -35,7 +35,7 @@ public class GameController {
     public void start() {
         makeRound();
 
-        while (!round.isWin() && round.getErrors() < ERRORS_TO_LOSE){
+        while (!round.checkWin() && round.getErrors() < ERRORS_TO_LOSE){
             displayGameState();
             processPlayerInput();
         }
@@ -50,7 +50,7 @@ public class GameController {
     }
 
     private void processPlayerInput() {
-        char letter = input.getInput("Введите букву: ", InputType.Letter);
+        char letter = input.input("Введите букву: ", InputType.LETTER);
 
         letter = Character.toLowerCase(letter);
 
@@ -83,7 +83,7 @@ public class GameController {
     private void endGame() {
         printer.printHangmanArt(round.getErrors());
 
-        if (round.isWin()) {
+        if (round.checkWin()) {
             printer.println("Поздравляем! Вы угадали слово!");
         }
         else {

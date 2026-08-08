@@ -25,12 +25,12 @@ public class Round {
     }
 
     public void setWord(String word) {
-        for (Character letter : word.toCharArray()) {
-            this.letters.add(letter);
+        for (char c : word.toCharArray()) {
+            this.letters.add(c);
         }
     }
 
-    public Character getWordLetter(int index) {
+    public char getWordLetter(int index) {
         return letters.get(index);
     }
 
@@ -42,9 +42,9 @@ public class Round {
         return letters.size();
     }
 
-    public boolean hasLetter(Character letter) {
-        for (Character let : letters) {
-            if (let.equals(letter)) {
+    public boolean hasLetter(char letter) {
+        for (char c : letters) {
+            if (c == letter) {
                 return true;
             }
         }
@@ -52,11 +52,11 @@ public class Round {
         return false;
     }
 
-    public void addUsedLetter(Character letter) {
+    public void addUsedLetter(char letter) {
         usedLetters.add(letter);
     }
 
-    public boolean isUsedLetter(Character letter) {
+    public boolean isUsedLetter(char letter) {
         return usedLetters.contains(letter);
     }
 
@@ -72,12 +72,12 @@ public class Round {
         return errorsCount;
     }
 
-    public void addError(Character letter) {
+    public void addError(char letter) {
         errorLetters.add(letter);
         errorsCount++;
     }
 
-    public boolean isWin() {
+    public boolean checkWin() {
         return isWin;
     }
 
