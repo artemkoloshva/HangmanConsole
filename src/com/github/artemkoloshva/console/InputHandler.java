@@ -25,9 +25,8 @@ public class InputHandler {
             if (validator.isValid(value, type)) {
                 return parser.parse(value, type);
             }
-            else {
-                printer.print("Ошибка ввода. ");
-            }
+
+            printer.print("Ошибка ввода. ");
         }
     }
 
@@ -38,9 +37,8 @@ public class InputHandler {
             if (validator.isValid(value, type)) {
                 return parser.parse(value, type);
             }
-            else {
-                printer.print("Ошибка ввода. Попробуйте еще раз.");
-            }
+
+            printer.print("Ошибка ввода. Попробуйте еще раз.");
         }
     }
 }
