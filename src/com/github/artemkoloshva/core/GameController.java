@@ -50,7 +50,7 @@ public class GameController {
     }
 
     private void processPlayerInput() {
-        char letter = input.input("Введите букву: ", InputType.LETTER);
+        char letter = input.get("Введите букву: ", InputType.LETTER);
 
         letter = Character.toLowerCase(letter);
 

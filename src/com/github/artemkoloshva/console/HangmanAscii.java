@@ -1,78 +1,84 @@
-package com.github.artemkoloshva.model;
+package com.github.artemkoloshva.console;
 
-public enum HangmanAscii {
-    STAGE_0("""
+public final class HangmanAscii {
+    private static final String[] PICTURES = {
+            """
               _______
               |/    |
               |   \s
               |   \s
               |   \s
               |   \s
-            __|________"""),
-    STAGE_1("""
+            __|________
+            """,
+            """
               _______
               |/    |
               |    ( )
               |   \s
               |   \s
               |   \s
-            __|________"""),
-    STAGE_2("""
+            __|________
+            """,
+            """
               _______
               |/    |
               |    ( )
               |     |
               |     |
               |   \s
-            __|________"""),
-    STAGE_3("""
+            __|________
+            """,
+            """
               _______
               |/    |
               |    ( )
               |    /|
               |     |
               |   \s
-            __|________"""),
-    STAGE_4("""
+            __|________
+            """,
+            """
               _______
               |/    |
               |    ( )
               |    /|\\
               |     |
               |   \s
-            __|________"""),
-    STAGE_5("""
+            __|________
+            """,
+            """
               _______
               |/    |
               |    ( )
               |    /|\\
               |    /\s
               |   / \s
-            __|________"""),
-    STAGE_6("""
+            __|________
+            """,
+            """
               _______
               |/    |
               |    ( )
               |    /|\\
               |    / \\
               |   /   \\
-            __|________"""),
-    STAGE_WIN("""
+            __|________
+            """,
+            """
               _______
               |/    |
               |    ^_^
               |    /|\\
               |     |
               |    / \\
-            __|________""");
+            __|________
+            """
+    };
 
-    private final String art;
+    private HangmanAscii() {}
 
-    HangmanAscii(String art) {
-        this.art = art;
-    }
-
-    public String getArt() {
-        return art;
+    public static String getPicture(int errors) {
+        return PICTURES[errors];
     }
 }

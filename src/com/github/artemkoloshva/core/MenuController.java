@@ -25,19 +25,19 @@ public class MenuController {
         printer.println(text);
 
         for (MenuItem item : items) {
-            printer.println(item.getText());
+            printer.println(item.text());
         }
 
         int index;
 
         do {
-            index = input.input("Выберите пункт меню: ", InputType.NUMBER);
+            index = input.get("Выберите пункт меню: ", InputType.NUMBER);
 
             if (index < 1 || index > items.size()) {
                 printer.print("Ошибка. Пункт меню не найден. ");
             }
         } while (index < 1 || index > items.size());
 
-        items.get(index - 1).choose();
+        items.get(index - 1).action().run();
     }
 }
