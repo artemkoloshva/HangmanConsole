@@ -24,20 +24,17 @@ public class GameController {
                 game.addLetter(letter);
             }
             else {
-                System.out.println("Вы уже вводили эту букву.");
+                view.showRepeatingLetterError();
             }
 
             if (game.checkLoose()) {
-                System.out.println("Вы проиграли!");
-                System.out.println("Слово: " + game.getSecretWord());
-                System.out.println();
+                view.showLoose(game.getSecretWord());
 
                 break;
             }
 
             if (game.checkWin()) {
-                System.out.println("Вы выиграли!");
-                System.out.println();
+                view.showWin();
 
                 break;
             }
