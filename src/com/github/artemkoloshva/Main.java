@@ -2,11 +2,12 @@ import com.github.artemkoloshva.controller.*;
 import com.github.artemkoloshva.model.game.Game;
 import com.github.artemkoloshva.model.menu.Menu;
 import com.github.artemkoloshva.model.dictionary.FileDictionary;
+import com.github.artemkoloshva.util.Constants;
 import com.github.artemkoloshva.view.*;
 import com.github.artemkoloshva.view.dialog.*;
 
 void main() {
-    FileDictionary dictionary = new FileDictionary("src\\com\\github\\artemkoloshva\\resources\\dictionary.txt");
+    FileDictionary dictionary = new FileDictionary(Constants.DICTIONARY_PATH);
 
     Menu menu = Menu.addTitle("Добро пожаловать в консольную игру \"Виселица\"!")
             .addItem("1. Новая игра", () -> start(dictionary))
