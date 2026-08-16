@@ -1,13 +1,16 @@
-package com.github.artemkoloshva.model;
+package com.github.artemkoloshva.model.common;
+
+import com.github.artemkoloshva.model.menu.MenuItem;
+import com.github.artemkoloshva.model.menu.Menu;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ConsoleMenuBuilder implements MenuBuilder {
+public class MenuBuilder implements Builder {
     private final String title;
     private final List<MenuItem> items = new ArrayList<>();
 
-    public ConsoleMenuBuilder(String title) {
+    public MenuBuilder(String title) {
         if (title == null || title.isBlank()) {
             throw new IllegalArgumentException("The title cannot be empty.");
         }
@@ -15,18 +18,17 @@ public class ConsoleMenuBuilder implements MenuBuilder {
         this.title = title;
     }
 
-    @Override
-    public ConsoleMenuBuilder addItem(String label, Runnable action) {
+    public MenuBuilder addItem(String label, Runnable action) {
         this.items.add(new MenuItem(label, action));
         return this;
     }
 
     @Override
-    public ConsoleMenu build() {
+    public Menu build() {
         if (items.isEmpty()) {
             throw new IllegalStateException("The menu must contain at least one item.");
         }
 
-        return new ConsoleMenu(title, items);
+        return new Menu(title, items);
     }
 }

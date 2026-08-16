@@ -1,4 +1,4 @@
-package com.github.artemkoloshva.console;
+package com.github.artemkoloshva.view.dialog;
 
 public class IntegerMinMaxDialog extends ConsoleDialog<Integer> {
     private final int min;

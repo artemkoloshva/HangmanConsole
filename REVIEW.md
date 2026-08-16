@@ -646,7 +646,7 @@ public class SecondMain {
 
   //Вторая конфигурация: один игровой раунд с рандомным словом из файла  
   public static void main(String[] args) {
-    FileDictionary dictionary = new FileDictionary("words.txt");
+    FileDictionary dictionary = new FileDictionary("dictionary.txt");
     String word =  dictionary.getRandom();
     Game game = new Game(word);
 
@@ -662,7 +662,7 @@ public class ThirdMain {
 
   //Третья конфигурация: игра через диалог "играть или выйти"  
   public static void main(String[] args) {
-    FileDictionary dictionary = new FileDictionary("words.txt");
+    FileDictionary dictionary = new FileDictionary("dictionary.txt");
 
     //Создание объекта через паттерн билдер
     Menu menu = Menu.addTitle("Добро пожаловать в консольную игру 'Виселица'!")

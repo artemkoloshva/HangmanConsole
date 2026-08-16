@@ -1,7 +1,6 @@
-package com.github.artemkoloshva.console;
+package com.github.artemkoloshva.view.dialog;
 
 import java.util.List;
-import java.util.function.Predicate;
 
 public class StringSelectDialog extends ConsoleDialog<String>{
     private final List<String> keys;

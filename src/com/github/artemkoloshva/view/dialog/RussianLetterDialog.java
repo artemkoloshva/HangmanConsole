@@ -1,4 +1,4 @@
-package com.github.artemkoloshva.console;
+package com.github.artemkoloshva.view.dialog;
 
 public class RussianLetterDialog extends ConsoleDialog<Character>{
     public RussianLetterDialog(String title, String error) {

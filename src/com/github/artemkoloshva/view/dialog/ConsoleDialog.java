@@ -1,4 +1,4 @@
-package com.github.artemkoloshva.console;
+package com.github.artemkoloshva.view.dialog;
 
 import java.util.Scanner;
 import java.util.function.Function;
@@ -10,7 +10,6 @@ public abstract class ConsoleDialog<T> implements Dialog<T> {
     protected final Function<String, T> mapper;
     protected final Predicate<T> validator;
     protected final Scanner scanner = new Scanner(System.in);
-    protected final Printer printer = new Printer();
 
     public ConsoleDialog(String title, String error, Function<String, T> mapper, Predicate<T> validator) {
         this.title = title;
@@ -39,10 +38,10 @@ public abstract class ConsoleDialog<T> implements Dialog<T> {
     }
 
     protected void showTitle() {
-        printer.println(title);
+        System.out.println(title);
     }
 
     protected void showError() {
-        printer.println(error);
+        System.out.println(error);
     }
 }

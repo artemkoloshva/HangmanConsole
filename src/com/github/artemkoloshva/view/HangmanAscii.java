@@ -1,4 +1,4 @@
-package com.github.artemkoloshva.console;
+package com.github.artemkoloshva.view;
 
 public final class HangmanAscii {
     private static final String[] PICTURES = {
@@ -63,15 +63,6 @@ public final class HangmanAscii {
               |    /|\\
               |    / \\
               |   /   \\
-            __|________
-            """,
-            """
-              _______
-              |/    |
-              |    ^_^
-              |    /|\\
-              |     |
-              |    / \\
             __|________
             """
     };
