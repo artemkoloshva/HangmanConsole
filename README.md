@@ -13,49 +13,12 @@ This project was built as part of the
 learning track, as a warm-up task for moving from theory to building a
 complete application.
 
-## Implementation highlights
-
-- **OOP architecture**: logic is split into layers — console input/output,
-  game logic, and data models.
-- **Input validation**: only Cyrillic letters are accepted; invalid input
-  does not increase the error counter.
-- **Re-entering a letter** that isn't in the word doesn't count as a new
-  mistake — the letter is simply added to the list of already-used letters.
-- `List`/`Set` collections are used instead of arrays.
-- The path to the dictionary is **relative**, not absolute.
-- The game restart is implemented via a loop, without recursion.
-- The gallows ASCII art has 7 stages (0–6 mistakes), stored as an `enum`.
-
 ## Stack
 
 - Java 25 (uses compact source files / instance main — a `void main()` in
   `Main.java` with no enclosing class, [JEP 512](https://openjdk.org/jeps/512))
 - Standard library only (no external dependencies)
 - Built manually / via IntelliJ IDEA (no Maven/Gradle)
-
-## Project structure
-
-```
-src/
-└── com/github/artemkoloshva/
-    ├── Main.java                 — entry point, menu initialization
-    ├── console/                  — input/output layer
-    │   ├── InputHandler.java     — loops the input prompt until a valid value is received
-    │   ├── InputParser.java      — parses a string into Integer/Character
-    │   ├── InputValidator.java   — validates the entered value
-    │   └── Printer.java          — console output (word, mistakes, ASCII art)
-    ├── core/                     — game logic
-    │   ├── GameController.java   — game loop for a single round
-    │   ├── MenuController.java   — menu display and handling
-    │   └── WordLoader.java       — loads the dictionary from a file
-    ├── model/                    — data models
-    │   ├── HangmanASCII.java     — enum with the gallows drawing stages
-    │   ├── InputType.java        — enum of expected input types (Number/Letter)
-    │   ├── MenuItem.java         — a menu item (text + action)
-    │   └── Round.java            — the current round's game state
-    └── resources/
-        └── words.txt             — dictionary (625 Russian nouns)
-```
 
 ## Requirements
 
@@ -73,15 +36,16 @@ src/
 ```bash
 cd src
 javac -d ../out com/github/artemkoloshva/Main.java \
-    com/github/artemkoloshva/console/*.java \
-    com/github/artemkoloshva/core/*.java \
-    com/github/artemkoloshva/model/*.java
+    com/github/artemkoloshva/view/*.java \
+    com/github/artemkoloshva/controller/*.java \
+    com/github/artemkoloshva/model/*.java \
+    com/github/artemkoloshva/util/*.java
 cd ..
 java -cp out Main
 ```
 > Important: run this from the project root — the path to the dictionary in
 > `GameController` is relative to the working directory
-> (`src\com\github\artemkoloshva\resources\words.txt`).
+> (`src\com\github\artemkoloshva\resources\dictionary.txt`).
 
 ## How to play
 
