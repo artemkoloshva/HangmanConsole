@@ -13,7 +13,10 @@ void main() {
             .addItem("1. Новая игра", () -> start(dictionary))
             .addItem("2. Выйти из игры", () -> System.exit(0))
             .build();
-    MenuView menuView = new MenuView(new IntegerMinMaxDialog("Выберите пункт меню: ", "Неверный ввод.", 1, menu.getItemsSize()));
+    MenuView menuView = new MenuView(new IntegerMinMaxDialog("Выберите пункт меню: ",
+            "Неверный ввод.",
+            Constants.MIN_MENU_ITEMS_SIZE,
+            menu.getItemsSize()));
     MenuController menuController = new MenuController(menu, menuView);
 
     menuController.start();
