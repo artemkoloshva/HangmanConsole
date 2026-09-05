@@ -1,9 +1,4 @@
 # Hangman Console
-
-![Java](https://img.shields.io/badge/Java-25-orange?logo=openjdk&logoColor=white)
-![Status](https://img.shields.io/badge/Status-Complete-success)
-![Dependencies](https://img.shields.io/badge/Dependencies-None-lightgrey)
-
 A console implementation of the classic "Hangman" game written in Java. The
 player guesses a random Russian word letter by letter, with mistakes
 displayed as an ASCII gallows drawing.
