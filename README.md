@@ -1,53 +1,82 @@
-# Hangman Console
-A console implementation of the classic "Hangman" game written in Java. The
-player guesses a random Russian word letter by letter, with mistakes
-displayed as an ASCII gallows drawing.
+# Проект «Виселица»
 
-This project was built as part of the
-[zhukovsd/java-backend-learning-course](https://zhukovsd.github.io/java-backend-learning-course/projects/hangman-console/)
-learning track, as a warm-up task for moving from theory to building a
-complete application.
+Консольная игра «Виселица», реализованная на Java.
 
-## Stack
+Правила игры описаны на [Википедии](https://ru.wikipedia.org/wiki/Виселица_%28игра%29).
 
-- Java 25 (uses compact source files / instance main — a `void main()` in
-  `Main.java` with no enclosing class, [JEP 512](https://openjdk.org/jeps/512))
-- Standard library only (no external dependencies)
-- Built manually / via IntelliJ IDEA (no Maven/Gradle)
+Комментарии по проекту: [YouTube](https://www.youtube.com/watch?v=kqLklwFjr5g).
 
-## Requirements
+## Задача
 
-- **JDK 25** or newer (required for the class-less `void main()` syntax in
-  `Main.java`). Earlier Java versions will not compile this file.
+Реализовать игру «Виселица» на Java.
 
-## How to run
+Интерфейс приложения — консольный.
 
-### Via IntelliJ IDEA
-1. Open the project folder as an IntelliJ IDEA project.
-2. Make sure `src` is marked as a **Sources Root** and the project JDK is 25+.
-3. Run `Main.java`.
+## Функционал приложения
 
-### Via terminal
-```bash
-cd src
-javac -d ../out com/github/artemkoloshva/Main.java \
-    com/github/artemkoloshva/view/*.java \
-    com/github/artemkoloshva/controller/*.java \
-    com/github/artemkoloshva/model/*.java \
-    com/github/artemkoloshva/util/*.java
-cd ..
-java -cp out Main
-```
-> Important: run this from the project root — the path to the dictionary in
-> `GameController` is relative to the working directory
-> (`src\com\github\artemkoloshva\resources\dictionary.txt`).
+1. При старте приложение предлагает:
 
-## How to play
+   * начать новую игру;
+   * выйти из приложения.
 
-1. On startup, choose a menu option:
-   - `1` — start a new game
-   - `2` — exit the application
-2. Enter Cyrillic letters one at a time until the word is fully guessed or
-   6 mistakes have been made.
-3. After the round ends, the app shows the result and the correct word,
-   then returns to the main menu.
+2. При начале новой игры случайным образом загадывается слово.
+
+3. Игрок пытается отгадать загаданное слово, вводя буквы.
+
+4. После каждой введённой буквы в консоль выводятся:
+
+   * счётчик ошибок;
+   * текущее состояние виселицы, нарисованное ASCII-символами.
+
+5. После завершения игры выводится результат:
+
+   * победа;
+   * поражение.
+
+6. После завершения игры приложение возвращается к предложению:
+
+   * начать новую игру;
+   * выйти из приложения.
+
+## Заметки по реализации
+
+Точкой входа в Java-приложение является метод класса `main`.
+
+Проект можно реализовать двумя способами:
+
+### ООП
+
+Если есть опыт работы с ООП, рекомендуется разбить игровую логику на несколько классов.
+
+### Процедурный стиль
+
+Если опыта в ООП пока недостаточно, проект можно реализовать в виде статических методов класса `Main`.
+
+## План работы
+
+### 1. Подготовить словарь
+
+Найти в интернете словарь существительных в именительном падеже.
+
+Из словаря необходимо исключить слишком короткие слова.
+
+Получившийся словарь используется как источник случайных загаданых слов для каждого раунда игры.
+
+### 2. Реализовать игровой цикл
+
+Реализовать:
+
+* выбор случайного загаданного слова;
+* ввод букв игроком;
+* проверку введённых букв;
+* подсчёт ошибок;
+* отображение текущего состояния слова;
+* отображение текущего состояния виселицы;
+* определение победы или поражения.
+
+### 3. Реализовать перезапуск игры
+
+После победы или поражения предоставить возможность:
+
+* начать новую игру;
+* выйти из приложения.
