@@ -146,10 +146,6 @@ java -cp out Main
 
 Разбор кода в видеоформате: [YouTube](https://www.youtube.com/watch?v=kqLklwFjr5g).
 
-## 👤 Автор
-
-**Artem Koloshva** — [@artemkoloshva](https://github.com/artemkoloshva)
-
 ---
 
 <p align="center"><i>Учебный проект. Реализован в образовательных целях для практики Java, ООП и архитектурных паттернов.</i></p>
