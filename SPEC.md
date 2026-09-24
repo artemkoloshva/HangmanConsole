@@ -3,11 +3,6 @@
 ## Описание задачи
 Реализовать консольную игру «Виселица» на языке Java. Правила игры описаны в [Википедии](https://ru.wikipedia.org/wiki/Виселица_(игра)).
 
-### Дополнительные материалы
-- Разбор проекта: [YouTube](https://www.youtube.com/watch?v=kqLklwFjr5g)
-- Основной чат сообщества: [Telegram](https://t.me/zhukovsd_it_chat)
-- Чат по проектам: [Telegram](https://t.me/zhukovsd_projects_it_chat)
-
 ## Необходимые знания
 - Базовый синтаксис Java.
 - Рекомендуется ознакомиться с лекцией по декомпозиции проектов: [YouTube](https://youtube.com/live/3ox5DI_xAog).
